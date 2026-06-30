@@ -1,2 +1,2 @@
 # Yo-Bot
-Discord Bot
+French and English Discord Bot
