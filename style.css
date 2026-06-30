@@ -1,0 +1,278 @@
+/* Yokai Watch Bot — design tokens
+   Palette: --ink #15122a (deep night-watch indigo), --ink-soft #1f1b3d,
+            --panel #211c44, --gold #f4b942 (watch dial gold),
+            --gold-dim #c98f2e, --mist #b9b4dd (soft body text),
+            --mist-dim #847fb0, --spirit #7fe7d4 (yo-kai spirit teal)
+   Type: Display = 'Baloo 2' (round, playful, kid-show energy)
+         Body    = 'Inter' (clean, legible, Discord-adjacent)
+   Signature: a "watch dial" medallion — concentric rings + ticking hand —
+              used as the section marker instead of generic numbers,
+              echoing the Yo-kai Watch the show is named after.
+*/
+
+:root {
+  --ink: #15122a;
+  --ink-soft: #1f1b3d;
+  --panel: #211c44;
+  --panel-line: #332c5e;
+  --gold: #f4b942;
+  --gold-dim: #c98f2e;
+  --mist: #c4bfe6;
+  --mist-dim: #8b86b8;
+  --spirit: #7fe7d4;
+  --white: #f7f5ff;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 18% -10%, rgba(244,185,66,0.10), transparent 45%),
+    radial-gradient(circle at 100% 0%, rgba(127,231,212,0.08), transparent 40%),
+    var(--ink);
+  color: var(--mist);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--spirit); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- Top bar ---------- */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 1.75rem 1.5rem 0.5rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--white);
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.01em;
+}
+
+/* the watch dial mark, reused as brand mark + section markers */
+.dial {
+  --size: 34px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background: conic-gradient(from -90deg, var(--gold), var(--gold-dim), var(--gold));
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 3px rgba(244,185,66,0.15), 0 4px 14px rgba(244,185,66,0.25);
+}
+.dial::after {
+  content: "";
+  width: 62%;
+  height: 62%;
+  border-radius: 50%;
+  background: var(--ink-soft);
+  box-shadow: inset 0 0 0 1px rgba(244,185,66,0.4);
+}
+
+.crumb {
+  font-size: 0.85rem;
+  color: var(--mist-dim);
+}
+.crumb a { color: var(--mist-dim); }
+.crumb a:hover { color: var(--spirit); }
+
+/* ---------- Hero ---------- */
+
+.hero {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 2rem;
+  border-bottom: 1px solid var(--panel-line);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 0.9rem;
+}
+.eyebrow .spark { color: var(--spirit); }
+
+h1 {
+  font-family: 'Baloo 2', sans-serif;
+  color: var(--white);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin: 0 0 0.6rem;
+  letter-spacing: 0.01em;
+}
+
+.hero p.lede {
+  max-width: 60ch;
+  color: var(--mist);
+  font-size: 1.02rem;
+  margin: 0 0 0.4rem;
+}
+
+.updated {
+  display: inline-block;
+  margin-top: 0.9rem;
+  font-size: 0.82rem;
+  color: var(--mist-dim);
+  background: var(--panel);
+  border: 1px solid var(--panel-line);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+}
+.updated strong { color: var(--gold); font-weight: 600; }
+
+/* ---------- Content ---------- */
+
+main {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 4rem;
+}
+
+section.clause {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 1.1rem;
+  padding: 1.8rem 0;
+  border-bottom: 1px solid var(--panel-line);
+}
+section.clause:last-of-type { border-bottom: none; }
+
+section.clause .dial {
+  margin-top: 0.2rem;
+  --size: 38px;
+}
+
+section.clause h2 {
+  font-family: 'Baloo 2', sans-serif;
+  color: var(--white);
+  font-size: 1.15rem;
+  margin: 0 0 0.6rem;
+  font-weight: 600;
+}
+
+section.clause p { margin: 0 0 0.7rem; color: var(--mist); }
+section.clause p:last-child { margin-bottom: 0; }
+
+section.clause ul {
+  margin: 0.4rem 0 0.7rem;
+  padding-left: 1.2rem;
+}
+section.clause li {
+  margin-bottom: 0.4rem;
+  color: var(--mist);
+}
+section.clause li::marker { color: var(--spirit); }
+
+.callout {
+  background: var(--panel);
+  border: 1px solid var(--panel-line);
+  border-left: 3px solid var(--spirit);
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+  font-size: 0.92rem;
+  color: var(--mist);
+  margin-top: 0.8rem;
+}
+.callout strong { color: var(--spirit); }
+
+/* ---------- Index / landing page ---------- */
+
+.links-grid {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1.6rem;
+}
+
+.link-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--panel);
+  border: 1px solid var(--panel-line);
+  border-radius: 14px;
+  padding: 1.1rem 1.3rem;
+  color: var(--white);
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.link-card:hover {
+  border-color: var(--gold-dim);
+  transform: translateX(2px);
+  text-decoration: none;
+}
+.link-card .dial { --size: 36px; }
+.link-card .label {
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 600;
+  font-size: 1.02rem;
+  color: var(--white);
+  display: block;
+}
+.link-card .sub {
+  font-size: 0.85rem;
+  color: var(--mist-dim);
+}
+.link-card .arrow {
+  margin-left: auto;
+  color: var(--mist-dim);
+  font-size: 1.1rem;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 2.5rem;
+  border-top: 1px solid var(--panel-line);
+  font-size: 0.82rem;
+  color: var(--mist-dim);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.2rem;
+  justify-content: space-between;
+}
+footer a { color: var(--mist-dim); }
+footer a:hover { color: var(--spirit); }
+footer .legal-disclaimer {
+  flex-basis: 100%;
+  font-size: 0.76rem;
+  opacity: 0.75;
+  margin-top: 0.4rem;
+}
+
+@media (max-width: 560px) {
+  section.clause { grid-template-columns: 38px 1fr; gap: 0.8rem; }
+  section.clause .dial { --size: 30px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .link-card { transition: none; }
+}
