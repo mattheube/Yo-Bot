@@ -27,6 +27,12 @@ la variable d'environnement du bot:
 setx YO_BOT_CHANGELOG_URL "https://votre-site.example/changelog.html"
 ```
 
+Pour le site actuel:
+
+```bat
+setx YO_BOT_CHANGELOG_URL "https://mattheube.github.io/Yo-Bot/changelog.html"
+```
+
 Fermer puis relancer la fenêtre de Yo-Bot. Le bouton **Voir tous les logs**
 apparaîtra alors dans le panneau des mises à jour et dans les publications
 créées avec `/setup help` ou actualisées avec `/update-help`.
