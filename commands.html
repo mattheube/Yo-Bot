@@ -1,179 +1,156 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Commandes — Yo-Bot</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Liste des commandes publiques et de configuration de Yo-Bot.">
+  <title>Commandes | Yo-Bot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Navigation principale">
+      <a class="brand" href="index.html"><img src="assets/yo-bot-avatar.png" alt=""><span>Yo-Bot</span></a>
+      <ul class="nav-links">
+        <li><a href="commands.html" aria-current="page">Commandes</a></li>
+        <li><a href="changelog.html">Mises a jour</a></li>
+        <li><a href="privacy.html">Confidentialite</a></li>
+        <li><a href="terms.html">Conditions</a></li>
+        <li><a class="invite-link" href="https://discord.com/oauth2/authorize?client_id=1416433735645265970&amp;scope=bot%20applications.commands&amp;permissions=277025770560" target="_blank" rel="noopener">Inviter Yo-Bot</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<div class="topbar">
-  <div class="brand">
-    <img class="avatar" src="assets/yo-bot-avatar.png" alt="Avatar de Yo-Bot">
-    Yo-Bot
-  </div>
-  <nav class="crumb"><a href="index.html">Accueil</a> · Commandes</nav>
-</div>
-
-<header class="hero">
-  <span class="eyebrow"><span class="spark">✦</span> Référence</span>
-  <h1>Toutes les commandes de Yo-Bot</h1>
-  <p class="lede">
-    Yo-Bot fonctionne entièrement avec des commandes slash (<code>/</code>). Tapez <code>/</code>
-    dans un salon où le bot est présent pour voir la liste s'afficher automatiquement.
-  </p>
-</header>
-
-<main>
-
-  <section class="cmd-category">
-    <div class="cmd-category-head">
-      <span class="dial" aria-hidden="true"></span>
-      <div>
-        <h2>Découverte &amp; collection</h2>
-        <p>Trouver, apprivoiser et consulter vos Yo-kai</p>
+  <main id="contenu">
+    <header class="page-hero">
+      <div class="shell">
+        <div>
+          <p class="eyebrow">Guide de jeu</p>
+          <h1>Commandes Yo-Bot</h1>
+          <p>Les commandes utiles sont courtes; les choix détaillés se font ensuite dans les embeds, menus et formulaires Discord.</p>
+        </div>
+        <img src="assets/whisper-artwork.jpg" alt="Whisper">
       </div>
+    </header>
+
+    <nav class="anchor-nav" aria-label="Categories de commandes">
+      <div class="shell">
+        <a href="#essentiel">Essentiel</a>
+        <a href="#collection">Collection</a>
+        <a href="#combats">Combats</a>
+        <a href="#groupe">Jeux de groupe</a>
+        <a href="#serveur">Configuration</a>
+      </div>
+    </nav>
+
+    <section class="command-section" id="essentiel">
+      <div class="shell">
+        <div class="command-section-header">
+          <div><p class="eyebrow">01</p><h2>Essentiel</h2></div>
+          <p>Commencer, consulter sa progression et choisir la langue du serveur.</p>
+        </div>
+        <div class="command-list">
+          <div class="command-row"><div class="command-name">/help</div><p>Ouvre le panneau d'aide interactif dans la langue du serveur.</p></div>
+          <div class="command-row"><div class="command-name">/profile</div><p>Affiche le niveau, l'argent, l'ELO et les statistiques PvE et PvP.</p></div>
+          <div class="command-row"><div class="command-name">/language</div><p>Choisit le français ou l'anglais pour Yo-Bot sur le serveur.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="command-section" id="collection">
+      <div class="shell">
+        <div class="command-section-header">
+          <div><p class="eyebrow">02</p><h2>Collection et economie</h2></div>
+          <p>Gérer les Yo-kai, les équipes, les objets, les pièces et les échanges.</p>
+        </div>
+        <div class="command-list">
+          <div class="command-row"><div class="command-name">/team</div><p>Configure les équipes PvE, PvP et raid de six Yo-kai depuis un panneau.</p></div>
+          <div class="command-row"><div class="command-name">/medallium</div><p>Parcourt le Medallium d'un joueur par tribu et par pages.</p></div>
+          <div class="command-row"><div class="command-name">/invocation</div><p>Présente un Yo-kai et indique le nombre d'exemplaires possédés.</p></div>
+          <div class="command-row"><div class="command-name">/inventory</div><p>Affiche les pièces, nourritures, objets, accessoires et ressources.</p></div>
+          <div class="command-row"><div class="command-name">/view</div><p>Explore le catalogue illustré des éléments réellement utilisables par le bot.</p></div>
+          <div class="command-row"><div class="command-name">/bingo-kai</div><p>Ouvre le Bingo-Kai privé, choisit une pièce et confirme jusqu'à dix tirages.</p></div>
+          <div class="command-row"><div class="command-name">/bkai</div><p>Alias court de <strong>/bingo-kai</strong>, sans option supplémentaire.</p></div>
+          <div class="command-row"><div class="command-name">/buy</div><p>Achète un objet de la boutique automatique après confirmation.</p></div>
+          <div class="command-row"><div class="command-name">/sell</div><p>Ouvre le panneau privé pour revendre des ressources de l'inventaire.</p></div>
+          <div class="command-row"><div class="command-name">/drop</div><p>Propose publiquement une ressource issue de son propre inventaire.</p></div>
+          <div class="command-row"><div class="command-name">/trade</div><p>Lance un échange sécurisé de Yo-kai entre deux joueurs.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="command-section" id="combats">
+      <div class="shell">
+        <div class="command-section-header">
+          <div><p class="eyebrow">03</p><h2>Combats</h2></div>
+          <p>Rencontres sauvages, amitié, PvE, informations de raid et matchmaking PvP.</p>
+        </div>
+        <div class="command-list">
+          <div class="command-row"><div class="command-name">/yokai</div><p>Cherche une rencontre sauvage et permet d'accepter ou d'éviter le combat.</p></div>
+          <div class="command-row"><div class="command-name">/befriend</div><p>Tente de devenir ami avec le Yo-kai sauvage classique actif dans le salon.</p></div>
+          <div class="command-row"><div class="command-name">/battle</div><p>Lance un combat PvE rapide avec l'équipe PvE actuelle.</p></div>
+          <div class="command-row"><div class="command-name">/boss-drop</div><p>Montre les Yo-kai pouvant être obtenus grâce à un boss.</p></div>
+          <div class="command-row"><div class="command-name">/pvp friendly</div><p>Défie un joueur ou cherche un adversaire pour un match amical.</p></div>
+          <div class="command-row"><div class="command-name">/pvp bet</div><p>Lance un défi ou un matchmaking avec une mise d'argent.</p></div>
+          <div class="command-row"><div class="command-name">/pvp ranked</div><p>Entre dans la file classée avec recherche par proximité d'ELO.</p></div>
+          <div class="command-row"><div class="command-name">/pvp pause</div><p>Met temporairement la recherche PvP en pause.</p></div>
+          <div class="command-row"><div class="command-name">/pvp resume</div><p>Relance une recherche PvP mise en pause.</p></div>
+          <div class="command-row"><div class="command-name">/pvp cancel</div><p>Quitte proprement la file de matchmaking.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="command-section" id="groupe">
+      <div class="shell">
+        <div class="command-section-header">
+          <div><p class="eyebrow">04</p><h2>Jeux de groupe</h2></div>
+          <p>Des activités conçues pour jouer ensemble sur un serveur.</p>
+        </div>
+        <div class="command-list">
+          <div class="command-row"><div class="command-name">/undercover</div><p>Crée une partie vocale ou textuelle avec lobby, mots secrets et votes anonymes.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="command-section" id="serveur">
+      <div class="shell">
+        <div class="command-section-header">
+          <div><p class="eyebrow">05</p><h2>Configuration serveur</h2></div>
+          <p>Ces commandes demandent les permissions d'administration du serveur.</p>
+        </div>
+        <div class="command-list">
+          <div class="command-row"><div class="command-name">/setup yokai-spawn <span class="tag tag-admin">Admin</span></div><p>Configure un ou deux salons d'apparitions sauvages classiques.</p></div>
+          <div class="command-row"><div class="command-name">/setup mystery-yokai-spawn <span class="tag tag-admin">Admin</span></div><p>Configure l'unique salon des Yo-kai mystérieux.</p></div>
+          <div class="command-row"><div class="command-name">/setup yokai-raid <span class="tag tag-admin">Admin</span></div><p>Configure l'unique salon de raids Yo-kai adaptés aux joueurs.</p></div>
+          <div class="command-row"><div class="command-name">/setup boss-raid <span class="tag tag-admin">Admin</span></div><p>Configure l'unique salon de boss raids de niveau 99.</p></div>
+          <div class="command-row"><div class="command-name">/setup shop <span class="tag tag-admin">Admin</span></div><p>Configure la boutique automatique et son rôle de notification optionnel.</p></div>
+          <div class="command-row"><div class="command-name">/setup help <span class="tag tag-admin">Admin</span></div><p>Publie le guide public dans un unique salon et mémorise son rôle de mise à jour.</p></div>
+          <div class="command-row"><div class="command-name">/setup create-defaults <span class="tag tag-admin">Admin</span></div><p>Crée les salons par défaut manquants sans dupliquer les configurations.</p></div>
+          <div class="command-row"><div class="command-name">/setup reset <span class="tag tag-admin">Admin</span></div><p>Retire une configuration de spawn, de raid ou de boutique.</p></div>
+          <div class="command-row"><div class="command-name">/setup lock-command <span class="tag tag-admin">Admin</span></div><p>Limite une commande à un ou deux salons déterminés.</p></div>
+          <div class="command-row"><div class="command-name">/setup unlock-command <span class="tag tag-admin">Admin</span></div><p>Retire une restriction de salon appliquée à une commande.</p></div>
+          <div class="command-row"><div class="command-name">/setup notification-role <span class="tag tag-admin">Admin</span></div><p>Sélectionne un rôle existant ou crée un rôle avec le nom choisi.</p></div>
+          <div class="command-row"><div class="command-name">/setup reset-notification-role <span class="tag tag-admin">Admin</span></div><p>Retire un rôle de notification configuré.</p></div>
+          <div class="command-row"><div class="command-name">/setup create-notification-roles <span class="tag tag-admin">Admin</span></div><p>Crée les rôles de notification standards avec des noms personnalisés.</p></div>
+          <div class="command-row"><div class="command-name">/protect-serveur <span class="tag tag-admin">Admin</span></div><p>Ouvre les outils de sauvegarde et de protection de structure du serveur.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-grid">
+        <div><div class="footer-brand"><img src="assets/yo-bot-avatar.png" alt=""> Yo-Bot</div><p>Une aventure Yo-kai pensee pour Discord.</p></div>
+        <ul class="footer-links"><li><a href="index.html">Accueil</a></li><li><a href="changelog.html">Mises a jour</a></li><li><a href="privacy.html">Confidentialite</a></li><li><a href="terms.html">Conditions</a></li></ul>
+        <p class="disclaimer">Les commandes réservées aux administrateurs internes du bot ne sont visibles que dans leur propre panneau <strong>/help</strong>.</p>
+      </div>
+      <div class="copyright">© 2026 Yo-Bot. Projet de fan non officiel.</div>
     </div>
-    <div class="cmd-list">
-      <div class="cmd-item">
-        <span class="cmd-name">/yokai</span>
-        <span class="cmd-desc">Cherche un Yo-kai sauvage dans le salon et propose de l'affronter.</span>
-      </div>
-      <div class="cmd-item">
-        <span class="cmd-name">/befriend</span>
-        <span class="cmd-desc">Tente de se lier d'amitié avec le Yo-kai sauvage actif dans le salon.</span>
-      </div>
-      <div class="cmd-item">
-        <span class="cmd-name">/medallium</span>
-        <span class="cmd-desc">Parcourt votre Médallium, la liste de tous les Yo-kai disponibles.</span>
-      </div>
-      <div class="cmd-item">
-        <span class="cmd-name">/invocation</span>
-        <span class="cmd-desc">Affiche la carte d'un Yo-kai précis et le nombre de copies que vous possédez.</span>
-      </div>
-      <div class="cmd-item">
-        <span class="cmd-name">/inventory</span>
-        <span class="cmd-desc">Affiche vos pièces, objets et accessoires.</span>
-      </div>
-      <div class="cmd-item">
-        <span class="cmd-name">/profile</span>
-        <span class="cmd-desc">Affiche votre profil Yo-Bot : niveau, XP, argent et statistiques.</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="cmd-category">
-    <div class="cmd-category-head">
-      <span class="dial" aria-hidden="true"></span>
-      <div>
-        <h2>Équipe &amp; combat</h2>
-        <p>Composer son équipe et se battre en PvE comme en PvP</p>
-      </div>
-    </div>
-    <div class="cmd-list">
-      <div class="cmd-item">
-        <span class="cmd-name">/team</span>
-        <span class="cmd-desc">Ouvre votre panel d'équipe, ou consulte l'équipe d'un autre joueur.</span>
-      </div>
-      <div class="cmd-item">
-        <span class="cmd-name">/battle</span>
-        <span class="cmd-desc">Lance un combat rapide 3 contre 3 avec votre équipe actuelle.</span>
-      </div>
-      <div class="cmd-item">
-        <span class="cmd-name">/pvp ranked</span>
-        <span class="cmd-desc">Rejoint le matchmaking classé contre d'autres joueurs.</span>
-      </div>
-      <div class="cmd-item">
-        <span class="cmd-name">/pvp friendly</span>
-        <span class="cmd-desc">Démarre un combat PvP amical sur le serveur.</span>
-      </div>
-      <div class="cmd-item">
-        <span class="cmd-name">/pvp bet</span>
-        <span class="cmd-desc">Démarre un combat PvP avec une mise d'argent.</span>
-      </div>
-      <div class="cmd-item">
-        <span class="cmd-name">/pvp cancel</span>
-        <span class="cmd-desc">Quitte la file de matchmaking classé.</span>
-      </div>
-      <div class="cmd-item">
-        <span class="cmd-name">/boss-drop</span>
-        <span class="cmd-desc">Affiche les récompenses d'amitié possibles pour un boss donné.</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="cmd-category">
-    <div class="cmd-category-head">
-      <span class="dial" aria-hidden="true"></span>
-      <div>
-        <h2>Économie &amp; communauté</h2>
-        <p>Boutique, mini-jeux et échanges entre joueurs</p>
-      </div>
-    </div>
-    <div class="cmd-list">
-      <div class="cmd-item">
-        <span class="cmd-name">/shop</span>
-        <span class="cmd-desc">Affiche la boutique actuelle.</span>
-      </div>
-      <div class="cmd-item">
-        <span class="cmd-name">/buy</span>
-        <span class="cmd-desc">Achète un objet dans la boutique.</span>
-      </div>
-      <div class="cmd-item">
-        <span class="cmd-name">/bingo-kai</span>
-        <span class="cmd-desc">Ouvre votre panel Bingo-Kai pour tenter de gagner des pièces.</span>
-      </div>
-      <div class="cmd-item">
-        <span class="cmd-name">/trade</span>
-        <span class="cmd-desc">Démarre un échange de Yo-kai entre deux joueurs.</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="cmd-category">
-    <div class="cmd-category-head">
-      <span class="dial" aria-hidden="true"></span>
-      <div>
-        <h2>Réglages &amp; informations</h2>
-        <p>Langue, aide et configuration du serveur</p>
-      </div>
-    </div>
-    <div class="cmd-list">
-      <div class="cmd-item">
-        <span class="cmd-name">/language</span>
-        <span class="cmd-desc">Définit la langue de Yo-Bot pour ce serveur.</span>
-      </div>
-      <div class="cmd-item">
-        <span class="cmd-name">/help</span>
-        <span class="cmd-desc">Affiche la liste des commandes de Yo-Bot par catégorie.</span>
-      </div>
-      <div class="cmd-item">
-        <span class="cmd-name">/setup <span class="admin-tag">Admin</span></span>
-        <span class="cmd-desc">Configure Yo-Bot en une seule commande : salons de spawn, rôles de notification, etc.</span>
-      </div>
-      <div class="cmd-item">
-        <span class="cmd-name">/cooldown <span class="admin-tag">Admin</span></span>
-        <span class="cmd-desc">Outils de gestion des temps de recharge sur le serveur.</span>
-      </div>
-    </div>
-  </section>
-
-  <div class="callout" style="margin-top: 0.5rem;">
-    <strong>Astuce</strong> — quelques commandes supplémentaires réservées aux administrateurs du bot (gestion des spawns forcés, dons d'objets, bannissements) ne sont pas listées ici car elles ne sont pas accessibles aux joueurs.
-  </div>
-
-</main>
-
-<footer>
-  <span>© 2026 Yo-Bot</span>
-  <span><a href="index.html">Accueil</a> · <a href="privacy.html">Confidentialité</a> · <a href="terms.html">Conditions</a></span>
-  <span class="legal-disclaimer">
-    Yo-Bot est un projet de fan non officiel. Yo-kai Watch est une marque appartenant à ses propriétaires respectifs ; ce bot n'est ni affilié, ni approuvé, ni sponsorisé par eux.
-  </span>
-</footer>
-
+  </footer>
 </body>
 </html>
