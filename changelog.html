@@ -7,15 +7,17 @@
   <title>Mises à jour | Yo-Bot</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&amp;family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="site.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu</a>
   <header class="site-header">
     <nav class="nav-shell" aria-label="Navigation principale">
-      <a class="brand" href="index.html"><img src="assets/yo-bot-avatar.png" alt=""><span>Yo-Bot</span></a>
-      <ul class="nav-links">
+      <a class="brand" href="index.html"><span class="brand-watch"><img src="assets/yo-bot-avatar.png" alt=""></span><span>Yo-Bot</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <ul class="nav-links" id="main-nav">
         <li><a href="commands.html">Commandes</a></li>
         <li><a href="changelog.html" aria-current="page">Mises à jour</a></li>
         <li><a href="privacy.html">Confidentialité</a></li>
@@ -44,7 +46,7 @@
           <h2>L'ecosysteme Yo-Bot</h2>
           <ul class="clean-list">
             <li>Catalogue <strong>/view</strong> enrichi avec les images et emojis disponibles.</li>
-            <li>Commande owner <strong>/update-help</strong> pour actualiser tous les guides configurés.</li>
+            <li>Commande <strong>/update-help</strong> pour actualiser les guides configurés.</li>
             <li>Redémarrage terminal fiable et verrou contre les doubles lancements.</li>
             <li>Site public regroupant commandes, historique et documents légaux.</li>
           </ul>

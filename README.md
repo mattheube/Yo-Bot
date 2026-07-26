@@ -7,7 +7,7 @@ dans ce dépôt.
 ## Structure
 
 - `index.html` : accueil et invitation Discord
-- `commands.html` : commandes publiques, administrateur et développeur
+- `commands.html` : commandes publiques, administrateur et équipe Yo-Bot
 - `changelog.html` : historique des versions
 - `privacy.html` : politique de confidentialité
 - `terms.html` : conditions d’utilisation
@@ -21,8 +21,8 @@ Ouvrir `index.html` dans un navigateur. Le site ne demande ni compilation ni
 dépendance JavaScript.
 
 Le sélecteur de langue de la page des commandes mémorise le choix uniquement
-dans le navigateur. Seul le nom de `/bingo-kai` change selon la langue, car
-c’est la seule commande localisée dans le code actuel du bot.
+dans le navigateur. Parmi les commandes présentées, seul le nom de
+`/bingo-kai` change selon la langue sélectionnée.
 
 ## Lier le bouton Discord aux logs
 

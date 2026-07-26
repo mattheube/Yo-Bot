@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Liste vérifiée des commandes publiques, administrateur serveur et développeur de Yo-Bot.">
+  <meta name="description" content="Guide des commandes publiques, administrateur serveur et développeur de Yo-Bot.">
   <title>Commandes | Yo-Bot</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,13 +31,13 @@
     <section class="commands-hero">
       <div class="commands-hero-shade"></div>
       <div class="shell commands-hero-content">
-        <p class="eyebrow light" data-fr="Liste vérifiée dans le code actuel" data-en="Verified against the current code">Liste vérifiée dans le code actuel</p>
+        <p class="eyebrow light" data-fr="Guide officiel des commandes" data-en="Official command guide">Guide officiel des commandes</p>
         <h1 data-fr="Toutes les commandes Yo-Bot" data-en="Every Yo-Bot command">Toutes les commandes Yo-Bot</h1>
-        <p data-fr="Les commandes publiques, celles réservées aux administrateurs de serveur et les outils internes des développeurs sont séparés clairement." data-en="Public commands, server-administrator commands and internal developer tools are clearly separated.">Les commandes publiques, celles réservées aux administrateurs de serveur et les outils internes des développeurs sont séparés clairement.</p>
+        <p data-fr="Les commandes publiques, celles réservées aux administrateurs de serveur et les outils de l’équipe Yo-Bot sont séparés clairement." data-en="Public commands, server-administrator commands and Yo-Bot team tools are clearly separated.">Les commandes publiques, celles réservées aux administrateurs de serveur et les outils de l’équipe Yo-Bot sont séparés clairement.</p>
         <div class="commands-hero-legend">
           <span><span class="tag tag-public">Public</span><span data-fr="Tous les joueurs" data-en="All players">Tous les joueurs</span></span>
           <span><span class="tag tag-admin">Admin</span><span data-fr="Permission Administrateur Discord" data-en="Discord Administrator permission">Permission Administrateur Discord</span></span>
-          <span><span class="tag tag-dev">Dev</span><span data-fr="ID autorisé dans le code du bot" data-en="User ID allowed in bot code">ID autorisé dans le code du bot</span></span>
+          <span><span class="tag tag-dev">Dev</span><span data-fr="Équipe Yo-Bot uniquement" data-en="Yo-Bot team only">Équipe Yo-Bot uniquement</span></span>
         </div>
       </div>
     </section>
@@ -74,7 +74,7 @@
         <a href="#combats" data-fr="Combats" data-en="Battles">Combats</a>
         <a href="#interactions" data-fr="Interactions" data-en="Interactions">Interactions</a>
         <a href="#serveur" data-fr="Admin serveur" data-en="Server admin">Admin serveur</a>
-        <a href="#developpeurs" data-fr="Développeurs" data-en="Developers">Développeurs</a>
+        <a href="#developpeurs" data-fr="Équipe Yo-Bot" data-en="Yo-Bot team">Équipe Yo-Bot</a>
       </div>
     </nav>
 
@@ -150,19 +150,14 @@
 
       <section class="command-section dev-section" id="developpeurs">
         <div class="shell">
-          <div class="dev-warning"><span class="tag tag-dev">Dev</span><div><strong data-fr="Outils internes de Yo-Bot" data-en="Internal Yo-Bot tools">Outils internes de Yo-Bot</strong><p data-fr="Ces commandes ne dépendent pas de la permission Administrateur Discord. Elles vérifient que l’ID de l’utilisateur figure dans BOT_ADMIN_IDS dans le code du bot." data-en="These commands do not depend on Discord's Administrator permission. They check that the user's ID is listed in BOT_ADMIN_IDS in the bot code.">Ces commandes ne dépendent pas de la permission Administrateur Discord. Elles vérifient que l’ID de l’utilisateur figure dans BOT_ADMIN_IDS dans le code du bot.</p></div></div>
-          <div class="command-section-header"><div><span class="section-kicker">06</span><p class="eyebrow light" data-fr="Accès restreint par ID" data-en="ID-restricted access">Accès restreint par ID</p><h2 data-fr="Développeurs du bot" data-en="Bot developers">Développeurs du bot</h2></div><p data-fr="Forçage d’événements, maintenance, modération interne et gestion d’inventaire." data-en="Forced events, maintenance, internal moderation and inventory management.">Forçage d’événements, maintenance, modération interne et gestion d’inventaire.</p></div>
+          <div class="dev-warning"><span class="tag tag-dev">Dev</span><div><strong data-fr="Outils réservés à l’équipe Yo-Bot" data-en="Tools reserved for the Yo-Bot team">Outils réservés à l’équipe Yo-Bot</strong><p data-fr="Ces commandes servent à la maintenance du service et ne sont pas destinées à l’administration habituelle d’un serveur." data-en="These commands are used to maintain the service and are not intended for regular server administration.">Ces commandes servent à la maintenance du service et ne sont pas destinées à l’administration habituelle d’un serveur.</p></div></div>
+          <div class="command-section-header"><div><span class="section-kicker">06</span><p class="eyebrow light" data-fr="Accès réservé" data-en="Restricted access">Accès réservé</p><h2 data-fr="Développeurs du bot" data-en="Bot developers">Développeurs du bot</h2></div><p data-fr="Maintenance et gestion interne de Yo-Bot." data-en="Yo-Bot maintenance and internal management.">Maintenance et gestion interne de Yo-Bot.</p></div>
           <div class="command-list">
-            <article class="command-row" data-search="/give dev propriétaire"><div class="command-main"><code>/give</code><span class="tag tag-dev">Dev</span></div><p data-fr="Ouvre le panneau privé permettant de donner des ressources à un joueur." data-en="Open the private panel used to grant resources to a player.">Ouvre le panneau privé permettant de donner des ressources à un joueur.</p></article>
-            <article class="command-row" data-search="/remove dev propriétaire"><div class="command-main"><code>/remove</code><span class="tag tag-dev">Dev</span></div><p data-fr="Ouvre le panneau privé permettant de retirer des ressources à un joueur." data-en="Open the private panel used to remove resources from a player.">Ouvre le panneau privé permettant de retirer des ressources à un joueur.</p></article>
-            <article class="command-row" data-search="/cooldown dev"><div class="command-main"><code>/cooldown <i>action user (seconds) (uses)</i></code><span class="tag tag-dev">Dev</span></div><p data-fr="Modifie ou réinitialise le cooldown de la commande /yokai pour un utilisateur." data-en="Change or reset a user's /yokai cooldown.">Modifie ou réinitialise le cooldown de la commande /yokai pour un utilisateur.</p></article>
-            <article class="command-row" data-search="/spawn yokai dev"><div class="command-main"><code>/spawn yokai <i>yokai (quantite)</i></code><span class="tag tag-dev">Dev</span></div><p data-fr="Force une apparition sauvage dans le salon actuel." data-en="Force a wild Yo-kai spawn in the current channel.">Force une apparition sauvage dans le salon actuel.</p></article>
-            <article class="command-row" data-search="/spawn raid-yokai dev"><div class="command-main"><code>/spawn raid-yokai <i>yokai (niveau)</i></code><span class="tag tag-dev">Dev</span></div><p data-fr="Force un Yo-kai Raid normal dans le salon actuel." data-en="Force a normal Yo-kai Raid in the current channel.">Force un Yo-kai Raid normal dans le salon actuel.</p></article>
-            <article class="command-row" data-search="/spawn boss-raid dev"><div class="command-main"><code>/spawn boss-raid <i>yokai (niveau)</i></code><span class="tag tag-dev">Dev</span></div><p data-fr="Force un Boss Raid dans le salon actuel." data-en="Force a Boss Raid in the current channel.">Force un Boss Raid dans le salon actuel.</p></article>
-            <article class="command-row" data-search="/update-help dev"><div class="command-main"><code>/update-help</code><span class="tag tag-dev">Dev</span></div><p data-fr="Actualise l’aide publique dans tous les serveurs configurés." data-en="Refresh public help in every configured server.">Actualise l’aide publique dans tous les serveurs configurés.</p></article>
-            <article class="command-row" data-search="/owner ban dev"><div class="command-main"><code>/owner ban <i>user (duration_minutes) (reason)</i></code><span class="tag tag-dev">Dev</span></div><p data-fr="Bannit un utilisateur de Yo-Bot temporairement ou définitivement." data-en="Temporarily or permanently ban a user from Yo-Bot.">Bannit un utilisateur de Yo-Bot temporairement ou définitivement.</p></article>
-            <article class="command-row" data-search="/owner unban dev"><div class="command-main"><code>/owner unban <i>user</i></code><span class="tag tag-dev">Dev</span></div><p data-fr="Retire le bannissement interne d’un utilisateur." data-en="Remove a user's internal bot ban.">Retire le bannissement interne d’un utilisateur.</p></article>
-            <article class="command-row" data-search="/owner servers dev"><div class="command-main"><code>/owner servers <i>(page)</i></code><span class="tag tag-dev">Dev</span></div><p data-fr="Affiche les serveurs utilisant actuellement Yo-Bot." data-en="Show the servers currently using Yo-Bot.">Affiche les serveurs utilisant actuellement Yo-Bot.</p></article>
+            <article class="command-row" data-search="/give dev"><div class="command-main"><code>/give</code><span class="tag tag-dev">Dev</span></div><p data-fr="Outil de gestion des ressources réservé à l’équipe Yo-Bot." data-en="Resource management tool reserved for the Yo-Bot team.">Outil de gestion des ressources réservé à l’équipe Yo-Bot.</p></article>
+            <article class="command-row" data-search="/remove dev"><div class="command-main"><code>/remove</code><span class="tag tag-dev">Dev</span></div><p data-fr="Outil de gestion des ressources réservé à l’équipe Yo-Bot." data-en="Resource management tool reserved for the Yo-Bot team.">Outil de gestion des ressources réservé à l’équipe Yo-Bot.</p></article>
+            <article class="command-row" data-search="/cooldown dev"><div class="command-main"><code>/cooldown</code><span class="tag tag-dev">Dev</span></div><p data-fr="Outil de maintenance de certains délais d’utilisation." data-en="Maintenance tool for selected usage delays.">Outil de maintenance de certains délais d’utilisation.</p></article>
+            <article class="command-row" data-search="/spawn dev"><div class="command-main"><code>/spawn</code><span class="tag tag-dev">Dev</span></div><p data-fr="Outil de gestion manuelle de certains événements." data-en="Manual management tool for selected events.">Outil de gestion manuelle de certains événements.</p></article>
+            <article class="command-row" data-search="/update-help dev"><div class="command-main"><code>/update-help</code><span class="tag tag-dev">Dev</span></div><p data-fr="Actualise les messages d’aide configurés." data-en="Refresh configured help messages.">Actualise les messages d’aide configurés.</p></article>
           </div>
         </div>
       </section>
@@ -176,7 +171,7 @@
       <div class="footer-grid">
         <div><div class="footer-brand"><img src="assets/yo-bot-avatar.png" alt=""> Yo-Bot</div><p data-fr="Une aventure Yo-kai pensée pour Discord." data-en="A Yo-kai adventure made for Discord.">Une aventure Yo-kai pensée pour Discord.</p></div>
         <ul class="footer-links"><li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li><li><a href="changelog.html" data-fr="Mises à jour" data-en="Updates">Mises à jour</a></li><li><a href="privacy.html" data-fr="Confidentialité" data-en="Privacy">Confidentialité</a></li><li><a href="terms.html" data-fr="Conditions" data-en="Terms">Conditions</a></li></ul>
-        <p class="disclaimer" data-fr="Les noms, paramètres et niveaux d’accès sont vérifiés directement dans les scripts actuels de Yo-Bot." data-en="Names, parameters and access levels are verified directly against the current Yo-Bot scripts.">Les noms, paramètres et niveaux d’accès sont vérifiés directement dans les scripts actuels de Yo-Bot.</p>
+        <p class="disclaimer" data-fr="Le guide présente les commandes utiles au public sans détailler le fonctionnement interne de Yo-Bot." data-en="This guide presents useful public commands without detailing Yo-Bot’s internal operation.">Le guide présente les commandes utiles au public sans détailler le fonctionnement interne de Yo-Bot.</p>
       </div>
       <div class="copyright">© 2026 Yo-Bot.</div>
     </div>

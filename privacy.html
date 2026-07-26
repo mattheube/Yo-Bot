@@ -7,15 +7,17 @@
   <title>Confidentialité | Yo-Bot</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&amp;family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="site.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu</a>
   <header class="site-header">
     <nav class="nav-shell" aria-label="Navigation principale">
-      <a class="brand" href="index.html"><img src="assets/yo-bot-avatar.png" alt=""><span>Yo-Bot</span></a>
-      <ul class="nav-links">
+      <a class="brand" href="index.html"><span class="brand-watch"><img src="assets/yo-bot-avatar.png" alt=""></span><span>Yo-Bot</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <ul class="nav-links" id="main-nav">
         <li><a href="commands.html">Commandes</a></li>
         <li><a href="changelog.html">Mises à jour</a></li>
         <li><a href="privacy.html" aria-current="page">Confidentialité</a></li>
