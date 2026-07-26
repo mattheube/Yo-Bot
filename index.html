@@ -3,127 +3,155 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Yo-Bot, un bot Discord non officiel inspiré de Yo-kai Watch : collection, combats, raids, Bingo-Kai et économie.">
-  <title>Yo-Bot | Bot Discord Yo-kai Watch</title>
+  <meta name="description" content="Yo-Bot, une aventure Yo-kai complète sur Discord : collection, combats, raids, Bingo-Kai et économie.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Yo-Bot">
+  <meta property="og:description" content="Collectionne, combats et pars en raid avec tes amis sur Discord.">
+  <meta property="og:url" content="https://mattheube.github.io/Yo-Bot/">
+  <meta property="og:image" content="https://mattheube.github.io/Yo-Bot/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Yo-Bot | L’aventure Yo-kai sur Discord</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&amp;family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="site.js" defer></script>
 </head>
-<body>
+<body class="home-page">
   <a class="skip-link" href="#contenu">Aller au contenu</a>
-  <header class="site-header">
+  <header class="site-header site-header-overlay">
     <nav class="nav-shell" aria-label="Navigation principale">
       <a class="brand" href="index.html" aria-current="page">
-        <img src="assets/yo-bot-avatar.png" alt="">
+        <span class="brand-watch"><img src="assets/yo-bot-avatar.png" alt=""></span>
         <span>Yo-Bot</span>
       </a>
-      <ul class="nav-links">
-        <li><a href="commands.html">Commandes</a></li>
-        <li><a href="changelog.html">Mises à jour</a></li>
-        <li><a href="privacy.html">Confidentialité</a></li>
-        <li><a href="terms.html">Conditions</a></li>
-        <li><a class="invite-link" href="https://discord.com/oauth2/authorize?client_id=1416433735645265970&amp;scope=bot%20applications.commands&amp;permissions=277025770560" target="_blank" rel="noopener">Inviter Yo-Bot</a></li>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <ul class="nav-links" id="main-nav">
+        <li><a href="commands.html" data-fr="Commandes" data-en="Commands">Commandes</a></li>
+        <li><a href="changelog.html" data-fr="Mises à jour" data-en="Updates">Mises à jour</a></li>
+        <li><a href="privacy.html" data-fr="Confidentialité" data-en="Privacy">Confidentialité</a></li>
+        <li><a href="terms.html" data-fr="Conditions" data-en="Terms">Conditions</a></li>
+        <li><a class="invite-link" href="https://discord.com/oauth2/authorize?client_id=1416433735645265970&amp;scope=bot%20applications.commands&amp;permissions=277025770560" target="_blank" rel="noopener" data-fr="Inviter Yo-Bot" data-en="Invite Yo-Bot">Inviter Yo-Bot</a></li>
       </ul>
     </nav>
   </header>
 
   <main id="contenu">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-content">
-        <p class="eyebrow">Aventures Yo-kai sur Discord</p>
-        <h1 id="hero-title">Yo-Bot</h1>
-        <p class="hero-copy">
-          Collectionne des Yo-kai, compose trois équipes, affronte des joueurs,
-          rejoins des raids et tente ta chance au Bingo-Kai, directement dans ton serveur.
-        </p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="https://discord.com/oauth2/authorize?client_id=1416433735645265970&amp;scope=bot%20applications.commands&amp;permissions=277025770560" target="_blank" rel="noopener">Inviter sur Discord <span aria-hidden="true">↗</span></a>
-          <a class="button button-secondary" href="commands.html">Voir les commandes <span aria-hidden="true">→</span></a>
-        </div>
-        <div class="hero-version">
-          <span class="version-badge">v3.0.0</span>
-          <span>Catalogue, aide globale et redemarrage fiabilise</span>
-        </div>
-        <div class="hero-companions" aria-hidden="true">
-          <img class="companion companion-jibanyan" src="assets/jibanyan-artwork.jpg" alt="">
-          <img class="companion companion-whisper" src="assets/whisper-artwork.jpg" alt="">
-          <img class="companion companion-komasan" src="assets/komasan-artwork.png" alt="">
+    <section class="hero-yokai" aria-labelledby="hero-title">
+      <div class="hero-shade"></div>
+      <div class="hero-inner shell">
+        <div class="hero-copy-card">
+          <p class="eyebrow light" data-fr="Une nouvelle aventure t’attend" data-en="A new adventure awaits">Une nouvelle aventure t’attend</p>
+          <div class="hero-title-lockup">
+            <span class="watch-orbit" aria-hidden="true"><span></span></span>
+            <h1 id="hero-title">Yo-Bot</h1>
+          </div>
+          <p class="hero-lead" data-fr="Collectionne des Yo-kai, forme tes équipes, affronte tes amis et rejoins des raids directement sur ton serveur Discord." data-en="Collect Yo-kai, build your teams, challenge your friends and join raids directly on your Discord server.">Collectionne des Yo-kai, forme tes équipes, affronte tes amis et rejoins des raids directement sur ton serveur Discord.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://discord.com/oauth2/authorize?client_id=1416433735645265970&amp;scope=bot%20applications.commands&amp;permissions=277025770560" target="_blank" rel="noopener"><span data-fr="Commencer l’aventure" data-en="Start the adventure">Commencer l’aventure</span> <span aria-hidden="true">↗</span></a>
+            <a class="button button-ghost-light" href="commands.html"><span data-fr="Voir les commandes" data-en="Browse commands">Voir les commandes</span> <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="hero-meta">
+            <span class="version-badge">v3.0.0</span>
+            <span data-fr="Yo-kai Watch 1 • 2 • 3 • 4" data-en="Yo-kai Watch 1 • 2 • 3 • 4">Yo-kai Watch 1 • 2 • 3 • 4</span>
+          </div>
         </div>
       </div>
+      <div class="hero-scroll" aria-hidden="true">↓</div>
     </section>
 
-    <section class="section section-white" aria-labelledby="experience-title">
-      <div class="shell">
-        <div class="section-heading">
-          <p class="eyebrow">Une partie qui continue</p>
-          <h2 id="experience-title">Ton aventure, dans les embeds</h2>
-          <p>Les panneaux interactifs concentrent les choix importants sans encombrer la liste des commandes.</p>
-        </div>
-        <div class="feature-grid">
-          <article class="feature">
-            <div class="feature-mark" aria-hidden="true">01</div>
-            <h3>Collection et équipes</h3>
-            <p>Medallium par tribu, inventaire, fiches d'invocation et équipes PvE, PvP et raid de six Yo-kai.</p>
-          </article>
-          <article class="feature">
-            <div class="feature-mark" aria-hidden="true">02</div>
-            <h3>Combats et raids</h3>
-            <p>Rencontres sauvages, Yo-kai mystérieux, affrontements tour par tour et salles de raid persistantes.</p>
-          </article>
-          <article class="feature">
-            <div class="feature-mark" aria-hidden="true">03</div>
-            <h3>Economie vivante</h3>
-            <p>Bingo-Kai, pieces, objets illustres, boutique automatique, ventes et drops entre joueurs.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="update-title">
-      <div class="shell update-band">
+    <section class="intro-strip">
+      <div class="shell intro-grid">
         <div>
-          <div class="update-number" aria-hidden="true">3.0</div>
-          <div class="update-date">23 juillet 2026</div>
+          <p class="eyebrow" data-fr="Ton médaillium prend vie" data-en="Your Medallium comes alive">Ton médaillium prend vie</p>
+          <h2 data-fr="Un vrai jeu communautaire, dans Discord" data-en="A complete community game, inside Discord">Un vrai jeu communautaire, dans Discord</h2>
         </div>
-        <div>
-          <p class="eyebrow">Dernière mise à jour</p>
-          <h2 id="update-title">L'ecosysteme Yo-Bot</h2>
-          <p>Cette version rassemble le catalogue interactif, un help public actualisable dans tous les serveurs et un demarrage plus fiable.</p>
-          <ul class="clean-list">
-            <li>Objets, nourriture, accessoires et pieces avec leurs images et emojis.</li>
-            <li>Commande owner <strong>/update-help</strong> pour synchroniser les guides publics.</li>
-            <li>Protection contre les doubles lancements et terminal simplifie.</li>
-          </ul>
-          <p><a class="button button-primary" href="changelog.html">Lire l'historique <span aria-hidden="true">→</span></a></p>
+        <p data-fr="Yo-Bot transforme ton serveur en terrain d’aventure : chaque joueur progresse, complète sa collection et retrouve les autres dans des activités persistantes." data-en="Yo-Bot turns your server into an adventure hub where every player grows, completes a collection and joins persistent activities.">Yo-Bot transforme ton serveur en terrain d’aventure : chaque joueur progresse, complète sa collection et retrouve les autres dans des activités persistantes.</p>
+      </div>
+    </section>
+
+    <section class="section adventure-section" aria-labelledby="adventure-title">
+      <div class="shell">
+        <header class="section-heading centered">
+          <span class="section-kicker">01</span>
+          <p class="eyebrow" data-fr="Choisis ton activité" data-en="Choose your activity">Choisis ton activité</p>
+          <h2 id="adventure-title" data-fr="Tout un monde de Yo-kai à découvrir" data-en="A whole world of Yo-kai to discover">Tout un monde de Yo-kai à découvrir</h2>
+        </header>
+        <div class="feature-grid yokai-features">
+          <article class="feature feature-collection">
+            <div class="feature-icon" aria-hidden="true">◉</div>
+            <p class="feature-number">01</p>
+            <h3 data-fr="Collection & équipes" data-en="Collection & teams">Collection & équipes</h3>
+            <p data-fr="Complète ton Medallium, équipe tes objets et compose tes équipes PvE, PvP et Raid." data-en="Complete your Medallium, equip items and build PvE, PvP and Raid teams.">Complète ton Medallium, équipe tes objets et compose tes équipes PvE, PvP et Raid.</p>
+          </article>
+          <article class="feature feature-battle">
+            <div class="feature-icon" aria-hidden="true">✦</div>
+            <p class="feature-number">02</p>
+            <h3 data-fr="Combats & raids" data-en="Battles & raids">Combats & raids</h3>
+            <p data-fr="Rencontre des Yo-kai sauvages, affronte des boss et participe aux différents modes PvP." data-en="Meet wild Yo-kai, challenge bosses and join several PvP modes.">Rencontre des Yo-kai sauvages, affronte des boss et participe aux différents modes PvP.</p>
+          </article>
+          <article class="feature feature-economy">
+            <div class="feature-icon" aria-hidden="true">◎</div>
+            <p class="feature-number">03</p>
+            <h3 data-fr="Économie & échanges" data-en="Economy & trading">Économie & échanges</h3>
+            <p data-fr="Tente ta chance au Bingo-Kai, utilise la boutique et échange en sécurité avec les autres joueurs." data-en="Try your luck at the Crank-kai, use the shop and trade safely with other players.">Tente ta chance au Bingo-Kai, utilise la boutique et échange en sécurité avec les autres joueurs.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-dark" aria-labelledby="portal-title">
+    <section class="worlds-section" aria-labelledby="worlds-title">
       <div class="shell">
-        <div class="section-heading">
-          <p class="eyebrow">Centre Yo-Bot</p>
-          <h2 id="portal-title">Tout retrouver au meme endroit</h2>
-          <p>Commandes, evolutions et documents officiels du projet.</p>
+        <header class="section-heading section-heading-light">
+          <span class="section-kicker">02</span>
+          <p class="eyebrow light" data-fr="Quatre univers réunis" data-en="Four worlds together">Quatre univers réunis</p>
+          <h2 id="worlds-title" data-fr="Voyage à travers Yo-kai Watch" data-en="Travel across Yo-kai Watch">Voyage à travers Yo-kai Watch</h2>
+        </header>
+        <div class="world-gallery">
+          <figure class="world-card world-card-wide">
+            <img src="assets/yw1-world.jpg" alt="Décor urbain de Yo-kai Watch avec Jibanyan et Whisper">
+            <figcaption><strong>Yo-kai Watch 1</strong><span data-fr="L’aventure commence" data-en="Where it all begins">L’aventure commence</span></figcaption>
+          </figure>
+          <figure class="world-card">
+            <img src="assets/yw3-world.jpg" alt="Ville colorée de Yo-kai Watch 3">
+            <figcaption><strong>Yo-kai Watch 3</strong><span data-fr="Une ville pleine de mystères" data-en="A city full of mysteries">Une ville pleine de mystères</span></figcaption>
+          </figure>
+          <figure class="world-card">
+            <img src="assets/nyan-gallery.jpg" alt="Nombreuses variantes de Jibanyan">
+            <figcaption><strong data-fr="Des centaines de Yo-kai" data-en="Hundreds of Yo-kai">Des centaines de Yo-kai</strong><span data-fr="À rencontrer et collectionner" data-en="Meet and collect them">À rencontrer et collectionner</span></figcaption>
+          </figure>
         </div>
-        <div class="portal-grid">
-          <a class="portal-card" href="commands.html">
-            <h3>Liste des commandes</h3>
-            <p>Les commandes de jeu et de configuration, classees par usage.</p>
-            <span aria-hidden="true">→</span>
-          </a>
-          <a class="portal-card" href="privacy.html">
-            <h3>Confidentialité</h3>
-            <p>Les données sauvegardées et la raison de leur utilisation.</p>
-            <span aria-hidden="true">→</span>
-          </a>
-          <a class="portal-card" href="terms.html">
-            <h3>Conditions</h3>
-            <p>Les règles qui protègent les joueurs, les serveurs et le service.</p>
-            <span aria-hidden="true">→</span>
-          </a>
+      </div>
+    </section>
+
+    <section class="section command-teaser" aria-labelledby="command-title">
+      <div class="shell command-teaser-grid">
+        <div class="command-art">
+          <img src="assets/yw2-banner.jpg" alt="Héros et Yo-kai de plusieurs époques">
+          <span class="command-art-stamp">/help</span>
         </div>
+        <div>
+          <span class="section-kicker">03</span>
+          <p class="eyebrow" data-fr="Simple à prendre en main" data-en="Easy to get started">Simple à prendre en main</p>
+          <h2 id="command-title" data-fr="Une commande, puis des panneaux interactifs" data-en="One command, then interactive panels">Une commande, puis des panneaux interactifs</h2>
+          <p data-fr="La liste reste courte : les choix détaillés se font dans des boutons, menus et formulaires Discord. Les commandes d’administration serveur et celles des développeurs sont clairement séparées." data-en="The list stays short: detailed choices use Discord buttons, menus and forms. Server-admin and bot-developer commands are clearly separated.">La liste reste courte : les choix détaillés se font dans des boutons, menus et formulaires Discord. Les commandes d’administration serveur et celles des développeurs sont clairement séparées.</p>
+          <div class="tag-legend">
+            <span class="tag tag-admin">Admin</span><span data-fr="Administrateur du serveur" data-en="Server administrator">Administrateur du serveur</span>
+            <span class="tag tag-dev">Dev</span><span data-fr="Développeur autorisé dans le code" data-en="Developer allowed in code">Développeur autorisé dans le code</span>
+          </div>
+          <a class="button button-dark" href="commands.html"><span data-fr="Explorer toutes les commandes" data-en="Explore every command">Explorer toutes les commandes</span> <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-yokai">
+      <div class="shell cta-inner">
+        <img src="assets/yo-bot-avatar.png" alt="" class="cta-avatar">
+        <div>
+          <p class="eyebrow light" data-fr="Prêt à commencer ?" data-en="Ready to begin?">Prêt à commencer ?</p>
+          <h2 data-fr="Invite Yo-Bot sur ton serveur" data-en="Invite Yo-Bot to your server">Invite Yo-Bot sur ton serveur</h2>
+        </div>
+        <a class="button button-gold" href="https://discord.com/oauth2/authorize?client_id=1416433735645265970&amp;scope=bot%20applications.commands&amp;permissions=277025770560" target="_blank" rel="noopener"><span data-fr="Inviter maintenant" data-en="Invite now">Inviter maintenant</span> ↗</a>
       </div>
     </section>
   </main>
@@ -131,19 +159,11 @@
   <footer class="site-footer">
     <div class="shell">
       <div class="footer-grid">
-        <div>
-          <div class="footer-brand"><img src="assets/yo-bot-avatar.png" alt=""> Yo-Bot</div>
-          <p>Une aventure Yo-kai pensee pour Discord.</p>
-        </div>
-        <ul class="footer-links">
-          <li><a href="commands.html">Commandes</a></li>
-          <li><a href="changelog.html">Mises à jour</a></li>
-          <li><a href="privacy.html">Confidentialité</a></li>
-          <li><a href="terms.html">Conditions</a></li>
-        </ul>
-        <p class="disclaimer">Yo-Bot est un projet de fan non officiel. Yo-kai Watch appartient a ses proprietaires respectifs. Le bot n'est ni affilie, ni approuve, ni sponsorise par eux.</p>
+        <div><div class="footer-brand"><img src="assets/yo-bot-avatar.png" alt=""> Yo-Bot</div><p data-fr="Une aventure Yo-kai pensée pour Discord." data-en="A Yo-kai adventure made for Discord.">Une aventure Yo-kai pensée pour Discord.</p></div>
+        <ul class="footer-links"><li><a href="commands.html" data-fr="Commandes" data-en="Commands">Commandes</a></li><li><a href="changelog.html" data-fr="Mises à jour" data-en="Updates">Mises à jour</a></li><li><a href="privacy.html" data-fr="Confidentialité" data-en="Privacy">Confidentialité</a></li><li><a href="terms.html" data-fr="Conditions" data-en="Terms">Conditions</a></li></ul>
+        <p class="disclaimer" data-fr="Projet de fan non officiel. Yo-kai Watch et ses personnages appartiennent à leurs propriétaires respectifs." data-en="Unofficial fan project. Yo-kai Watch and its characters belong to their respective owners.">Projet de fan non officiel. Yo-kai Watch et ses personnages appartiennent à leurs propriétaires respectifs.</p>
       </div>
-      <div class="copyright">© 2026 Yo-Bot. Tous droits reserves pour le projet Yo-Bot.</div>
+      <div class="copyright">© 2026 Yo-Bot.</div>
     </div>
   </footer>
 </body>

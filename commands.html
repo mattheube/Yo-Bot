@@ -3,152 +3,182 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Liste des commandes publiques et de configuration de Yo-Bot.">
+  <meta name="description" content="Liste vérifiée des commandes publiques, administrateur serveur et développeur de Yo-Bot.">
   <title>Commandes | Yo-Bot</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&amp;family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="site.js" defer></script>
 </head>
-<body>
+<body class="commands-page">
   <a class="skip-link" href="#contenu">Aller au contenu</a>
   <header class="site-header">
     <nav class="nav-shell" aria-label="Navigation principale">
-      <a class="brand" href="index.html"><img src="assets/yo-bot-avatar.png" alt=""><span>Yo-Bot</span></a>
-      <ul class="nav-links">
-        <li><a href="commands.html" aria-current="page">Commandes</a></li>
-        <li><a href="changelog.html">Mises à jour</a></li>
-        <li><a href="privacy.html">Confidentialité</a></li>
-        <li><a href="terms.html">Conditions</a></li>
-        <li><a class="invite-link" href="https://discord.com/oauth2/authorize?client_id=1416433735645265970&amp;scope=bot%20applications.commands&amp;permissions=277025770560" target="_blank" rel="noopener">Inviter Yo-Bot</a></li>
+      <a class="brand" href="index.html"><span class="brand-watch"><img src="assets/yo-bot-avatar.png" alt=""></span><span>Yo-Bot</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <ul class="nav-links" id="main-nav">
+        <li><a href="commands.html" aria-current="page" data-fr="Commandes" data-en="Commands">Commandes</a></li>
+        <li><a href="changelog.html" data-fr="Mises à jour" data-en="Updates">Mises à jour</a></li>
+        <li><a href="privacy.html" data-fr="Confidentialité" data-en="Privacy">Confidentialité</a></li>
+        <li><a href="terms.html" data-fr="Conditions" data-en="Terms">Conditions</a></li>
+        <li><a class="invite-link" href="https://discord.com/oauth2/authorize?client_id=1416433735645265970&amp;scope=bot%20applications.commands&amp;permissions=277025770560" target="_blank" rel="noopener" data-fr="Inviter Yo-Bot" data-en="Invite Yo-Bot">Inviter Yo-Bot</a></li>
       </ul>
     </nav>
   </header>
 
   <main id="contenu">
-    <header class="page-hero">
-      <div class="shell">
-        <div>
-          <p class="eyebrow">Guide de jeu</p>
-          <h1>Commandes Yo-Bot</h1>
-          <p>Les commandes utiles sont courtes; les choix détaillés se font ensuite dans les embeds, menus et formulaires Discord.</p>
+    <section class="commands-hero">
+      <div class="commands-hero-shade"></div>
+      <div class="shell commands-hero-content">
+        <p class="eyebrow light" data-fr="Liste vérifiée dans le code actuel" data-en="Verified against the current code">Liste vérifiée dans le code actuel</p>
+        <h1 data-fr="Toutes les commandes Yo-Bot" data-en="Every Yo-Bot command">Toutes les commandes Yo-Bot</h1>
+        <p data-fr="Les commandes publiques, celles réservées aux administrateurs de serveur et les outils internes des développeurs sont séparés clairement." data-en="Public commands, server-administrator commands and internal developer tools are clearly separated.">Les commandes publiques, celles réservées aux administrateurs de serveur et les outils internes des développeurs sont séparés clairement.</p>
+        <div class="commands-hero-legend">
+          <span><span class="tag tag-public">Public</span><span data-fr="Tous les joueurs" data-en="All players">Tous les joueurs</span></span>
+          <span><span class="tag tag-admin">Admin</span><span data-fr="Permission Administrateur Discord" data-en="Discord Administrator permission">Permission Administrateur Discord</span></span>
+          <span><span class="tag tag-dev">Dev</span><span data-fr="ID autorisé dans le code du bot" data-en="User ID allowed in bot code">ID autorisé dans le code du bot</span></span>
         </div>
       </div>
-    </header>
+    </section>
 
-    <nav class="anchor-nav" aria-label="Catégories de commandes">
+    <section class="command-tools">
+      <div class="shell command-tools-inner">
+        <label class="search-field">
+          <span data-fr="Rechercher" data-en="Search">Rechercher</span>
+          <input id="command-search" type="search" placeholder="Commande ou description…" autocomplete="off">
+        </label>
+        <label class="language-field">
+          <span data-fr="Langue Discord" data-en="Discord language">Langue Discord</span>
+          <select id="site-language" aria-label="Choisir la langue">
+            <option value="fr">Français</option>
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="it">Italiano</option>
+            <option value="de">Deutsch</option>
+            <option value="pt-BR">Português (Brasil)</option>
+            <option value="ru">Русский</option>
+            <option value="ar">العربية</option>
+            <option value="ja">日本語</option>
+            <option value="ja-Latn">Nihongo (romaji)</option>
+          </select>
+        </label>
+        <p id="language-note" class="language-note" data-fr="Le nom de Bingo-Kai est le seul nom de commande actuellement localisé dans le code. Les autres noms restent identiques." data-en="Bingo-Kai is currently the only command name localized in the code. Every other command name stays the same.">Le nom de Bingo-Kai est le seul nom de commande actuellement localisé dans le code. Les autres noms restent identiques.</p>
+      </div>
+    </section>
+
+    <nav class="anchor-nav command-anchor" aria-label="Catégories de commandes">
       <div class="shell">
-        <a href="#essentiel">Essentiel</a>
-        <a href="#collection">Collection</a>
-        <a href="#combats">Combats</a>
-        <a href="#groupe">Jeux de groupe</a>
-        <a href="#serveur">Configuration</a>
+        <a href="#essentiel" data-fr="Essentiel" data-en="Essentials">Essentiel</a>
+        <a href="#collection" data-fr="Collection" data-en="Collection">Collection</a>
+        <a href="#combats" data-fr="Combats" data-en="Battles">Combats</a>
+        <a href="#interactions" data-fr="Interactions" data-en="Interactions">Interactions</a>
+        <a href="#serveur" data-fr="Admin serveur" data-en="Server admin">Admin serveur</a>
+        <a href="#developpeurs" data-fr="Développeurs" data-en="Developers">Développeurs</a>
       </div>
     </nav>
 
-    <section class="command-section" id="essentiel">
-      <div class="shell">
-        <div class="command-section-header">
-          <div><p class="eyebrow">01</p><h2>Essentiel</h2></div>
-          <p>Commencer, consulter sa progression et choisir la langue du serveur.</p>
+    <div class="commands-content">
+      <section class="command-section" id="essentiel">
+        <div class="shell">
+          <div class="command-section-header"><div><span class="section-kicker">01</span><p class="eyebrow" data-fr="Pour commencer" data-en="Getting started">Pour commencer</p><h2 data-fr="Essentiel" data-en="Essentials">Essentiel</h2></div><p data-fr="Aide, profil, progression et découverte du catalogue." data-en="Help, profile, progression and catalog discovery.">Aide, profil, progression et découverte du catalogue.</p></div>
+          <div class="command-list">
+            <article class="command-row" data-search="/help aide help"><div class="command-main"><code>/help</code><span class="tag tag-public">Public</span></div><p data-fr="Ouvre le panneau d’aide interactif dans la langue du serveur." data-en="Open the interactive help panel in the server language.">Ouvre le panneau d’aide interactif dans la langue du serveur.</p></article>
+            <article class="command-row" data-search="/profile profil stats"><div class="command-main"><code>/profile <i>(user)</i></code><span class="tag tag-public">Public</span></div><p data-fr="Affiche ton profil Yo-Bot ou celui du joueur choisi." data-en="Show your Yo-Bot profile or another player's profile.">Affiche ton profil Yo-Bot ou celui du joueur choisi.</p></article>
+            <article class="command-row" data-search="/trophies trophées titres"><div class="command-main"><code>/trophies</code><span class="tag tag-public">Public</span></div><p data-fr="Affiche les succès et permet d’équiper un titre débloqué." data-en="Show achievements and equip an unlocked title.">Affiche les succès et permet d’équiper un titre débloqué.</p></article>
+            <article class="command-row" data-search="/view catalogue objets"><div class="command-main"><code>/view</code><span class="tag tag-public">Public</span></div><p data-fr="Parcourt les objets, nourritures, accessoires et pièces utilisables." data-en="Browse usable items, food, accessories and coins.">Parcourt les objets, nourritures, accessoires et pièces utilisables.</p></article>
+          </div>
         </div>
-        <div class="command-list">
-          <div class="command-row"><div class="command-name">/help</div><p>Ouvre le panneau d'aide interactif dans la langue du serveur.</p></div>
-          <div class="command-row"><div class="command-name">/profile</div><p>Affiche le niveau, l'argent, l'ELO et les statistiques PvE et PvP.</p></div>
-          <div class="command-row"><div class="command-name">/language</div><p>Choisit le français ou l'anglais pour Yo-Bot sur le serveur.</p></div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="command-section" id="collection">
-      <div class="shell">
-        <div class="command-section-header">
-          <div><p class="eyebrow">02</p><h2>Collection et économie</h2></div>
-          <p>Gérer les Yo-kai, les équipes, les objets, les pièces et les échanges.</p>
+      <section class="command-section command-section-tint" id="collection">
+        <div class="shell">
+          <div class="command-section-header"><div><span class="section-kicker">02</span><p class="eyebrow" data-fr="Ton aventure" data-en="Your adventure">Ton aventure</p><h2 data-fr="Collection & économie" data-en="Collection & economy">Collection & économie</h2></div><p data-fr="Équipes, Medallium, inventaire, Bingo-Kai et boutique." data-en="Teams, Medallium, inventory, Crank-kai and shop.">Équipes, Medallium, inventaire, Bingo-Kai et boutique.</p></div>
+          <div class="command-list">
+            <article class="command-row" data-search="/team équipe pve pvp raid"><div class="command-main"><code>/team <i>(user) (kind)</i></code><span class="tag tag-public">Public</span></div><p data-fr="Ouvre le panneau d’équipe ou consulte celle d’un autre joueur." data-en="Open the team panel or view another player's team.">Ouvre le panneau d’équipe ou consulte celle d’un autre joueur.</p></article>
+            <article class="command-row" data-search="/medallium collection"><div class="command-main"><code>/medallium <i>(user) (universe)</i></code><span class="tag tag-public">Public</span></div><p data-fr="Parcourt le Medallium d’un joueur dans tous les univers ou un jeu précis." data-en="Browse a player's Medallium across every universe or one game.">Parcourt le Medallium d’un joueur dans tous les univers ou un jeu précis.</p></article>
+            <article class="command-row" data-search="/invocation yokai carte"><div class="command-main"><code>/invocation <i>yokai (user)</i></code><span class="tag tag-public">Public</span></div><p data-fr="Affiche la fiche d’un Yo-kai et le nombre d’exemplaires possédés." data-en="Show a Yo-kai card and the number of owned copies.">Affiche la fiche d’un Yo-kai et le nombre d’exemplaires possédés.</p></article>
+            <article class="command-row" data-search="/inventory inventaire"><div class="command-main"><code>/inventory <i>(user)</i></code><span class="tag tag-public">Public</span></div><p data-fr="Affiche les pièces, objets, nourritures et accessoires." data-en="Show coins, items, food and accessories.">Affiche les pièces, objets, nourritures et accessoires.</p></article>
+            <article class="command-row" data-search="bingo crank expendekai slot yo-kaimat"><div class="command-main"><code>/<span data-command-localized="bingo">bingo-kai</span></code><span class="tag tag-public">Public</span></div><p data-fr="Ouvre le panneau de tirage Bingo-Kai. Son nom s’adapte à la langue Discord sélectionnée." data-en="Open the Crank-kai draw panel. Its name follows the selected Discord language.">Ouvre le panneau de tirage Bingo-Kai. Son nom s’adapte à la langue Discord sélectionnée.</p></article>
+            <article class="command-row" data-search="/bkai alias"><div class="command-main"><code>/bkai</code><span class="tag tag-public">Public</span></div><p data-fr="Alias court qui ouvre le même panneau de tirage." data-en="Short alias that opens the same draw panel.">Alias court qui ouvre le même panneau de tirage.</p></article>
+            <article class="command-row" data-search="/buy achat boutique"><div class="command-main"><code>/buy <i>item (quantity)</i></code><span class="tag tag-public">Public</span></div><p data-fr="Achète un objet disponible dans la boutique actuelle." data-en="Buy an item from the current shop.">Achète un objet disponible dans la boutique actuelle.</p></article>
+            <article class="command-row" data-search="/sell vente"><div class="command-main"><code>/sell</code><span class="tag tag-public">Public</span></div><p data-fr="Ouvre le panneau privé de revente des ressources." data-en="Open the private resource-selling panel.">Ouvre le panneau privé de revente des ressources.</p></article>
+          </div>
         </div>
-        <div class="command-list">
-          <div class="command-row"><div class="command-name">/team</div><p>Configure les équipes PvE, PvP et raid de six Yo-kai depuis un panneau.</p></div>
-          <div class="command-row"><div class="command-name">/medallium</div><p>Parcourt le Medallium d'un joueur par tribu et par pages.</p></div>
-          <div class="command-row"><div class="command-name">/invocation</div><p>Présente un Yo-kai et indique le nombre d'exemplaires possédés.</p></div>
-          <div class="command-row"><div class="command-name">/inventory</div><p>Affiche les pièces, nourritures, objets, accessoires et ressources.</p></div>
-          <div class="command-row"><div class="command-name">/view</div><p>Explore le catalogue illustré des éléments réellement utilisables par le bot.</p></div>
-          <div class="command-row"><div class="command-name">/bingo-kai</div><p>Ouvre le Bingo-Kai privé, choisit une pièce et confirme jusqu'à dix tirages.</p></div>
-          <div class="command-row"><div class="command-name">/bkai</div><p>Alias court de <strong>/bingo-kai</strong>, sans option supplémentaire.</p></div>
-          <div class="command-row"><div class="command-name">/buy</div><p>Achète un objet de la boutique automatique après confirmation.</p></div>
-          <div class="command-row"><div class="command-name">/sell</div><p>Ouvre le panneau privé pour revendre des ressources de l'inventaire.</p></div>
-          <div class="command-row"><div class="command-name">/drop</div><p>Propose publiquement une ressource issue de son propre inventaire.</p></div>
-          <div class="command-row"><div class="command-name">/trade</div><p>Lance un échange sécurisé de Yo-kai entre deux joueurs.</p></div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="command-section" id="combats">
-      <div class="shell">
-        <div class="command-section-header">
-          <div><p class="eyebrow">03</p><h2>Combats</h2></div>
-          <p>Rencontres sauvages, amitié, PvE, informations de raid et matchmaking PvP.</p>
+      <section class="command-section" id="combats">
+        <div class="shell">
+          <div class="command-section-header"><div><span class="section-kicker">03</span><p class="eyebrow" data-fr="À l’action" data-en="Into action">À l’action</p><h2 data-fr="Rencontres & combats" data-en="Encounters & battles">Rencontres & combats</h2></div><p data-fr="Yo-kai sauvages, amitié, Boss Drops et matchmaking PvP." data-en="Wild Yo-kai, befriending, Boss Drops and PvP matchmaking.">Yo-kai sauvages, amitié, Boss Drops et matchmaking PvP.</p></div>
+          <div class="command-list">
+            <article class="command-row" data-search="/yokai rencontre sauvage"><div class="command-main"><code>/yokai <i>(universe)</i></code><span class="tag tag-public">Public</span></div><p data-fr="Cherche un Yo-kai sauvage dans l’univers choisi." data-en="Look for a wild Yo-kai in the selected universe.">Cherche un Yo-kai sauvage dans l’univers choisi.</p></article>
+            <article class="command-row" data-search="/befriend ami amitié"><div class="command-main"><code>/befriend <i>name</i></code><span class="tag tag-public">Public</span></div><p data-fr="Tente de devenir ami avec le Yo-kai sauvage actif dans le salon." data-en="Try to befriend the active wild Yo-kai in the channel.">Tente de devenir ami avec le Yo-kai sauvage actif dans le salon.</p></article>
+            <article class="command-row" data-search="/boss-drop récompenses boss"><div class="command-main"><code>/boss-drop <i>yokai</i></code><span class="tag tag-public">Public</span></div><p data-fr="Montre les récompenses d’amitié disponibles pour un boss." data-en="Show friendship rewards available from a boss.">Montre les récompenses d’amitié disponibles pour un boss.</p></article>
+            <article class="command-row" data-search="/pvp friendly amical"><div class="command-main"><code>/pvp friendly <i>(opponent)</i></code><span class="tag tag-public">Public</span></div><p data-fr="Défie un joueur ou rejoint le matchmaking amical." data-en="Challenge a player or join friendly matchmaking.">Défie un joueur ou rejoint le matchmaking amical.</p></article>
+            <article class="command-row" data-search="/pvp bet mise"><div class="command-main"><code>/pvp bet <i>amount (opponent)</i></code><span class="tag tag-public">Public</span></div><p data-fr="Lance un défi ou un matchmaking avec une mise." data-en="Start a challenge or matchmaking battle with a money bet.">Lance un défi ou un matchmaking avec une mise.</p></article>
+            <article class="command-row" data-search="/pvp ranked classé"><div class="command-main"><code>/pvp ranked</code><span class="tag tag-public">Public</span></div><p data-fr="Rejoint la file de matchmaking classée." data-en="Join ranked matchmaking.">Rejoint la file de matchmaking classée.</p></article>
+            <article class="command-row" data-search="/pvp pause"><div class="command-main"><code>/pvp pause</code><span class="tag tag-public">Public</span></div><p data-fr="Met temporairement la recherche PvP en pause." data-en="Pause your PvP matchmaking search.">Met temporairement la recherche PvP en pause.</p></article>
+            <article class="command-row" data-search="/pvp resume reprendre"><div class="command-main"><code>/pvp resume</code><span class="tag tag-public">Public</span></div><p data-fr="Reprend une recherche PvP mise en pause." data-en="Resume a paused PvP search.">Reprend une recherche PvP mise en pause.</p></article>
+            <article class="command-row" data-search="/pvp cancel annuler"><div class="command-main"><code>/pvp cancel</code><span class="tag tag-public">Public</span></div><p data-fr="Quitte proprement la file de matchmaking." data-en="Leave PvP matchmaking.">Quitte proprement la file de matchmaking.</p></article>
+          </div>
         </div>
-        <div class="command-list">
-          <div class="command-row"><div class="command-name">/yokai</div><p>Cherche une rencontre sauvage et permet d'accepter ou d'éviter le combat.</p></div>
-          <div class="command-row"><div class="command-name">/befriend</div><p>Tente de devenir ami avec le Yo-kai sauvage classique actif dans le salon.</p></div>
-          <div class="command-row"><div class="command-name">/battle</div><p>Lance un combat PvE rapide avec l'équipe PvE actuelle.</p></div>
-          <div class="command-row"><div class="command-name">/boss-drop</div><p>Montre les Yo-kai pouvant être obtenus grâce à un boss.</p></div>
-          <div class="command-row"><div class="command-name">/pvp friendly</div><p>Défie un joueur ou cherche un adversaire pour un match amical.</p></div>
-          <div class="command-row"><div class="command-name">/pvp bet</div><p>Lance un défi ou un matchmaking avec une mise d'argent.</p></div>
-          <div class="command-row"><div class="command-name">/pvp ranked</div><p>Entre dans la file classée avec recherche par proximité d'ELO.</p></div>
-          <div class="command-row"><div class="command-name">/pvp pause</div><p>Met temporairement la recherche PvP en pause.</p></div>
-          <div class="command-row"><div class="command-name">/pvp resume</div><p>Relance une recherche PvP mise en pause.</p></div>
-          <div class="command-row"><div class="command-name">/pvp cancel</div><p>Quitte proprement la file de matchmaking.</p></div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="command-section" id="groupe">
-      <div class="shell">
-        <div class="command-section-header">
-          <div><p class="eyebrow">04</p><h2>Jeux de groupe</h2></div>
-          <p>Des activités conçues pour jouer ensemble sur un serveur.</p>
+      <section class="command-section command-section-tint" id="interactions">
+        <div class="shell">
+          <div class="command-section-header"><div><span class="section-kicker">04</span><p class="eyebrow" data-fr="Jouer ensemble" data-en="Play together">Jouer ensemble</p><h2 data-fr="Interactions" data-en="Interactions">Interactions</h2></div><p data-fr="Guildes, échanges, drops et partie Undercover." data-en="Guilds, trading, drops and Undercover games.">Guildes, échanges, drops et partie Undercover.</p></div>
+          <div class="command-list">
+            <article class="command-row" data-search="/guild guilde clan"><div class="command-main"><code>/guild <i>(member)</i></code><span class="tag tag-public">Public</span></div><p data-fr="Crée, rejoint, consulte et gère une guilde globale." data-en="Create, join, view and manage a global guild.">Crée, rejoint, consulte et gère une guilde globale.</p></article>
+            <article class="command-row" data-search="/trade échange"><div class="command-main"><code>/trade <i>user</i></code><span class="tag tag-public">Public</span></div><p data-fr="Invite un joueur dans un échange privé de Yo-kai." data-en="Invite a player to a private Yo-kai trade.">Invite un joueur dans un échange privé de Yo-kai.</p></article>
+            <article class="command-row" data-search="/drop don objet"><div class="command-main"><code>/drop <i>kind reward quantity claimants</i></code><span class="tag tag-public">Public</span></div><p data-fr="Propose publiquement une ressource de ton inventaire." data-en="Offer one of your inventory resources to other players.">Propose publiquement une ressource de ton inventaire.</p></article>
+            <article class="command-row" data-search="/undercover jeu groupe"><div class="command-main"><code>/undercover <i>mode joueurs (agents) inconnus (acces) (theme) inconnu_commence rapide</i></code><span class="tag tag-public">Public</span></div><p data-fr="Organise une partie Undercover vocale ou textuelle." data-en="Host a voice or text Undercover game.">Organise une partie Undercover vocale ou textuelle.</p></article>
+          </div>
         </div>
-        <div class="command-list">
-          <div class="command-row"><div class="command-name">/undercover</div><p>Crée une partie vocale ou textuelle avec lobby, mots secrets et votes anonymes.</p></div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="command-section" id="serveur">
-      <div class="shell">
-        <div class="command-section-header">
-          <div><p class="eyebrow">05</p><h2>Configuration serveur</h2></div>
-          <p>Ces commandes demandent les permissions d'administration du serveur.</p>
+      <section class="command-section admin-section" id="serveur">
+        <div class="shell">
+          <div class="command-section-header"><div><span class="section-kicker">05</span><p class="eyebrow" data-fr="Permission Discord" data-en="Discord permission">Permission Discord</p><h2 data-fr="Administration du serveur" data-en="Server administration">Administration du serveur</h2></div><p data-fr="Ces commandes exigent la permission Administrateur sur le serveur où elles sont utilisées." data-en="These commands require the Administrator permission in the server where they are used.">Ces commandes exigent la permission Administrateur sur le serveur où elles sont utilisées.</p></div>
+          <div class="command-list">
+            <article class="command-row" data-search="/setup configuration admin"><div class="command-main"><code>/setup</code><span class="tag tag-admin">Admin</span></div><p data-fr="Ouvre le panneau des setups : apparitions, raids, Help, Shop, salons et restrictions." data-en="Open the setup panel for spawns, raids, Help, Shop, channels and restrictions.">Ouvre le panneau des setups : apparitions, raids, Help, Shop, salons et restrictions.</p></article>
+            <article class="command-row" data-search="/reset configuration admin"><div class="command-main"><code>/reset</code><span class="tag tag-admin">Admin</span></div><p data-fr="Ouvre le panneau de réinitialisation des configurations existantes." data-en="Open the existing configuration reset panel.">Ouvre le panneau de réinitialisation des configurations existantes.</p></article>
+            <article class="command-row" data-search="/notification rôle admin"><div class="command-main"><code>/notification</code><span class="tag tag-admin">Admin</span></div><p data-fr="Configure les rôles de notification globaux ou par rang." data-en="Configure global or rank-specific notification roles.">Configure les rôles de notification globaux ou par rang.</p></article>
+            <article class="command-row" data-search="/language langue admin"><div class="command-main"><code>/language <i>language</i></code><span class="tag tag-admin">Admin</span></div><p data-fr="Définit la langue de Yo-Bot pour le serveur." data-en="Set the Yo-Bot language for the server.">Définit la langue de Yo-Bot pour le serveur.</p></article>
+          </div>
         </div>
-        <div class="command-list">
-          <div class="command-row"><div class="command-name">/setup yokai-spawn <span class="tag tag-admin">Admin</span></div><p>Configure un ou deux salons d'apparitions sauvages classiques.</p></div>
-          <div class="command-row"><div class="command-name">/setup mystery-yokai-spawn <span class="tag tag-admin">Admin</span></div><p>Configure l'unique salon des Yo-kai mystérieux.</p></div>
-          <div class="command-row"><div class="command-name">/setup yokai-raid <span class="tag tag-admin">Admin</span></div><p>Configure l'unique salon de raids Yo-kai adaptés aux joueurs.</p></div>
-          <div class="command-row"><div class="command-name">/setup boss-raid <span class="tag tag-admin">Admin</span></div><p>Configure l'unique salon de boss raids de niveau 99.</p></div>
-          <div class="command-row"><div class="command-name">/setup shop <span class="tag tag-admin">Admin</span></div><p>Configure la boutique automatique et son rôle de notification optionnel.</p></div>
-          <div class="command-row"><div class="command-name">/setup help <span class="tag tag-admin">Admin</span></div><p>Publie le guide public dans un unique salon et mémorise son rôle de mise à jour.</p></div>
-          <div class="command-row"><div class="command-name">/setup create-defaults <span class="tag tag-admin">Admin</span></div><p>Crée les salons par défaut manquants sans dupliquer les configurations.</p></div>
-          <div class="command-row"><div class="command-name">/setup reset <span class="tag tag-admin">Admin</span></div><p>Retire une configuration de spawn, de raid ou de boutique.</p></div>
-          <div class="command-row"><div class="command-name">/setup lock-command <span class="tag tag-admin">Admin</span></div><p>Limite une commande à un ou deux salons déterminés.</p></div>
-          <div class="command-row"><div class="command-name">/setup unlock-command <span class="tag tag-admin">Admin</span></div><p>Retire une restriction de salon appliquée à une commande.</p></div>
-          <div class="command-row"><div class="command-name">/setup notification-role <span class="tag tag-admin">Admin</span></div><p>Sélectionne un rôle existant ou crée un rôle avec le nom choisi.</p></div>
-          <div class="command-row"><div class="command-name">/setup reset-notification-role <span class="tag tag-admin">Admin</span></div><p>Retire un rôle de notification configuré.</p></div>
-          <div class="command-row"><div class="command-name">/setup create-notification-roles <span class="tag tag-admin">Admin</span></div><p>Crée les rôles de notification standards avec des noms personnalisés.</p></div>
-          <div class="command-row"><div class="command-name">/protect-serveur <span class="tag tag-admin">Admin</span></div><p>Ouvre les outils de sauvegarde et de protection de structure du serveur.</p></div>
+      </section>
+
+      <section class="command-section dev-section" id="developpeurs">
+        <div class="shell">
+          <div class="dev-warning"><span class="tag tag-dev">Dev</span><div><strong data-fr="Outils internes de Yo-Bot" data-en="Internal Yo-Bot tools">Outils internes de Yo-Bot</strong><p data-fr="Ces commandes ne dépendent pas de la permission Administrateur Discord. Elles vérifient que l’ID de l’utilisateur figure dans BOT_ADMIN_IDS dans le code du bot." data-en="These commands do not depend on Discord's Administrator permission. They check that the user's ID is listed in BOT_ADMIN_IDS in the bot code.">Ces commandes ne dépendent pas de la permission Administrateur Discord. Elles vérifient que l’ID de l’utilisateur figure dans BOT_ADMIN_IDS dans le code du bot.</p></div></div>
+          <div class="command-section-header"><div><span class="section-kicker">06</span><p class="eyebrow light" data-fr="Accès restreint par ID" data-en="ID-restricted access">Accès restreint par ID</p><h2 data-fr="Développeurs du bot" data-en="Bot developers">Développeurs du bot</h2></div><p data-fr="Forçage d’événements, maintenance, modération interne et gestion d’inventaire." data-en="Forced events, maintenance, internal moderation and inventory management.">Forçage d’événements, maintenance, modération interne et gestion d’inventaire.</p></div>
+          <div class="command-list">
+            <article class="command-row" data-search="/give dev propriétaire"><div class="command-main"><code>/give</code><span class="tag tag-dev">Dev</span></div><p data-fr="Ouvre le panneau privé permettant de donner des ressources à un joueur." data-en="Open the private panel used to grant resources to a player.">Ouvre le panneau privé permettant de donner des ressources à un joueur.</p></article>
+            <article class="command-row" data-search="/remove dev propriétaire"><div class="command-main"><code>/remove</code><span class="tag tag-dev">Dev</span></div><p data-fr="Ouvre le panneau privé permettant de retirer des ressources à un joueur." data-en="Open the private panel used to remove resources from a player.">Ouvre le panneau privé permettant de retirer des ressources à un joueur.</p></article>
+            <article class="command-row" data-search="/cooldown dev"><div class="command-main"><code>/cooldown <i>action user (seconds) (uses)</i></code><span class="tag tag-dev">Dev</span></div><p data-fr="Modifie ou réinitialise le cooldown de la commande /yokai pour un utilisateur." data-en="Change or reset a user's /yokai cooldown.">Modifie ou réinitialise le cooldown de la commande /yokai pour un utilisateur.</p></article>
+            <article class="command-row" data-search="/spawn yokai dev"><div class="command-main"><code>/spawn yokai <i>yokai (quantite)</i></code><span class="tag tag-dev">Dev</span></div><p data-fr="Force une apparition sauvage dans le salon actuel." data-en="Force a wild Yo-kai spawn in the current channel.">Force une apparition sauvage dans le salon actuel.</p></article>
+            <article class="command-row" data-search="/spawn raid-yokai dev"><div class="command-main"><code>/spawn raid-yokai <i>yokai (niveau)</i></code><span class="tag tag-dev">Dev</span></div><p data-fr="Force un Yo-kai Raid normal dans le salon actuel." data-en="Force a normal Yo-kai Raid in the current channel.">Force un Yo-kai Raid normal dans le salon actuel.</p></article>
+            <article class="command-row" data-search="/spawn boss-raid dev"><div class="command-main"><code>/spawn boss-raid <i>yokai (niveau)</i></code><span class="tag tag-dev">Dev</span></div><p data-fr="Force un Boss Raid dans le salon actuel." data-en="Force a Boss Raid in the current channel.">Force un Boss Raid dans le salon actuel.</p></article>
+            <article class="command-row" data-search="/update-help dev"><div class="command-main"><code>/update-help</code><span class="tag tag-dev">Dev</span></div><p data-fr="Actualise l’aide publique dans tous les serveurs configurés." data-en="Refresh public help in every configured server.">Actualise l’aide publique dans tous les serveurs configurés.</p></article>
+            <article class="command-row" data-search="/owner ban dev"><div class="command-main"><code>/owner ban <i>user (duration_minutes) (reason)</i></code><span class="tag tag-dev">Dev</span></div><p data-fr="Bannit un utilisateur de Yo-Bot temporairement ou définitivement." data-en="Temporarily or permanently ban a user from Yo-Bot.">Bannit un utilisateur de Yo-Bot temporairement ou définitivement.</p></article>
+            <article class="command-row" data-search="/owner unban dev"><div class="command-main"><code>/owner unban <i>user</i></code><span class="tag tag-dev">Dev</span></div><p data-fr="Retire le bannissement interne d’un utilisateur." data-en="Remove a user's internal bot ban.">Retire le bannissement interne d’un utilisateur.</p></article>
+            <article class="command-row" data-search="/owner servers dev"><div class="command-main"><code>/owner servers <i>(page)</i></code><span class="tag tag-dev">Dev</span></div><p data-fr="Affiche les serveurs utilisant actuellement Yo-Bot." data-en="Show the servers currently using Yo-Bot.">Affiche les serveurs utilisant actuellement Yo-Bot.</p></article>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <p id="no-results" class="no-results shell" hidden data-fr="Aucune commande ne correspond à cette recherche." data-en="No command matches this search.">Aucune commande ne correspond à cette recherche.</p>
+    </div>
   </main>
 
   <footer class="site-footer">
     <div class="shell">
       <div class="footer-grid">
-        <div><div class="footer-brand"><img src="assets/yo-bot-avatar.png" alt=""> Yo-Bot</div><p>Une aventure Yo-kai pensee pour Discord.</p></div>
-        <ul class="footer-links"><li><a href="index.html">Accueil</a></li><li><a href="changelog.html">Mises à jour</a></li><li><a href="privacy.html">Confidentialité</a></li><li><a href="terms.html">Conditions</a></li></ul>
-        <p class="disclaimer">Les commandes réservées aux administrateurs internes du bot ne sont visibles que dans leur propre panneau <strong>/help</strong>.</p>
+        <div><div class="footer-brand"><img src="assets/yo-bot-avatar.png" alt=""> Yo-Bot</div><p data-fr="Une aventure Yo-kai pensée pour Discord." data-en="A Yo-kai adventure made for Discord.">Une aventure Yo-kai pensée pour Discord.</p></div>
+        <ul class="footer-links"><li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li><li><a href="changelog.html" data-fr="Mises à jour" data-en="Updates">Mises à jour</a></li><li><a href="privacy.html" data-fr="Confidentialité" data-en="Privacy">Confidentialité</a></li><li><a href="terms.html" data-fr="Conditions" data-en="Terms">Conditions</a></li></ul>
+        <p class="disclaimer" data-fr="Les noms, paramètres et niveaux d’accès sont vérifiés directement dans les scripts actuels de Yo-Bot." data-en="Names, parameters and access levels are verified directly against the current Yo-Bot scripts.">Les noms, paramètres et niveaux d’accès sont vérifiés directement dans les scripts actuels de Yo-Bot.</p>
       </div>
-      <div class="copyright">© 2026 Yo-Bot. Projet de fan non officiel.</div>
+      <div class="copyright">© 2026 Yo-Bot.</div>
     </div>
   </footer>
 </body>
